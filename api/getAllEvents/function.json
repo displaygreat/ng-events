@@ -13,6 +13,15 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "events",
+      "databaseName": "ng-events",
+      "collectionName": "Items",
+      "connectionStringSetting": "CosmosConnectionString",
+      "direction": "in",
+      "sqlQuery": "SELECT * from p"
     }
   ],
   "scriptFile": "../dist/getAllEvents/index.js"
