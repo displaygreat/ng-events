@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "events",
+      "databaseName": "ngTickets",
+      "collectionName": "Items",
+      "createIfNotExists": false,
+      "connectionStringSetting": "CosmosConnectionString",
+      "direction": "in",
+      "sqlQuery": "SELECT * from p"
+    }
+  ],
+  "scriptFile": "../dist/angular-basic/getAllEvents/index.js"
+}
