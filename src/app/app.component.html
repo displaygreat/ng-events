@@ -4,11 +4,12 @@
   </div>
   <h2 class="events-title">Events in {{ organization }}</h2>
   <button class="button-show" (click)="toggleEvents()">Show events</button>
-  <div *ngIf="toggle">
+  <!-- <div *ngIf="toggle">
     <app-events *ngFor="let eventItem of events" [event]="eventItem"></app-events>
-  </div>
+  </div> -->
+  <app-events></app-events>
 </div>
-<p (click)="getAllEvents()">{{message}}</p>
+<!-- <p (click)="getAllEvents()">{{message}}</p> -->
 
 <app-posts></app-posts>
 
