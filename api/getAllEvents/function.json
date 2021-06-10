@@ -17,7 +17,7 @@
     {
       "type": "cosmosDB",
       "name": "events",
-      "databaseName": "ngTickets",
+      "databaseName": "ng-events",
       "collectionName": "Items",
       "connectionStringSetting": "CosmosConnectionString",
       "direction": "in",
