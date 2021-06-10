@@ -34,9 +34,9 @@ export class AppComponent {
   toggleEvents () {
     this.toggle = !this.toggle;
   }
-  async getAllEvents(){
-    const response = await fetch("/api/getAllEvents");
-    const payload = await response.json();     
-    console.dir(payload);
-  }
+  // async getAllEvents(){
+  //   const response = await fetch("/api/getAllEvents");
+  //   const payload = await response.json();     
+  //   console.dir(payload);
+  // }
 }
