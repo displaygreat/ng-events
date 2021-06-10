@@ -5,6 +5,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     context.res.json({
     text: "Hello from Get All Events",
     });
+    
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: context.bindings.events
