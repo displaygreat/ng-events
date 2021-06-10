@@ -30,13 +30,14 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.http.get('/api/message')
       .subscribe((resp: any) => this.message = resp.text);
-      this.http.get('/api/getAllEvents')
+    this.http.get('/api/getAllEvents')
       .subscribe((resp: any) => this.helloEvent = resp.text);
   }
   
   toggleEvents () {
     this.toggle = !this.toggle;
   }
+
   async getAllEvents(){
     const response = await fetch("/api/getAllEvents");
     const payload = await response.json();     
