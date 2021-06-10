@@ -30,8 +30,8 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.http.get('/api/message')
       .subscribe((resp: any) => this.message = resp.text);
-    // this.http.get('/api/getAllEvents')
-    //   .subscribe((resp: any) => this.helloEvent = resp.text);
+    this.http.get('/api/getAllEvents')
+      .subscribe((resp: any) => this.helloEvent = resp.text);
   }
   
   toggleEvents () {
