@@ -9,14 +9,14 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     text: "Hello from Get All Events",
     });
     
-    const name = req.body.name;
-    context.log(`get name`);
-    context.bindings.events = name;
+    // const name = req.body.name;
+    // context.log(`get name`);
+    // context.bindings.events = name;
 
-    context.res = {
-        status: 200, /* Defaults to 200 */
-        body: name,
-    };
+    // context.res = {
+    //     status: 200, /* Defaults to 200 */
+    //     body: name,
+    // };
 };
 
 export default httpTrigger;
