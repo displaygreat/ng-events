@@ -25,6 +25,7 @@ export class AppComponent {
     {id: 3, name: 'HackaJoy', author: 'AngularNights', date: "03/07/21", time: "16:00", counter: 0},
   ]
   message = '';
+  resp = [];
 
   constructor(private http: HttpClient) {
     this.http.get('/api/message')
@@ -34,9 +35,9 @@ export class AppComponent {
   toggleEvents () {
     this.toggle = !this.toggle;
   }
-  // async getAllEvents(){
-  //   const response = await fetch("/api/getAllEvents");
-  //   const payload = await response.json();     
-  //   console.dir(payload);
-  // }
+  async getAllEvents(){
+    const response = await fetch("/api/getAllEvents");
+    const payload = await response.json();     
+    console.dir(payload);
+  }
 }
