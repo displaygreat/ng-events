@@ -21,7 +21,7 @@
       "collectionName": "Items",
       "connectionStringSetting": "CosmosConnectionString",
       "direction": "in",
-      "sqlQuery": "SELECT * from c"
+      "sqlQuery": "SELECT * from p"
     }
   ],
   "scriptFile": "../dist/getAllEvents/index.js"

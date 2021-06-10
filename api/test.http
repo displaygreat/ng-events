@@ -1,1 +1,1 @@
-GET http://localhost:7071/api/message
+GET https://agreeable-wave-0421d5210.azurestaticapps.net/api/getAllEvents
