@@ -25,5 +25,5 @@
       "sqlQuery": "SELECT * from p"
     }
   ],
-  "scriptFile": "../dist/angular-basic/getAllEvents/index.js"
+  "scriptFile": "../dist/getAllEvents/index.js"
 }
