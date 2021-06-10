@@ -16,7 +16,7 @@ export class EventsComponent implements OnInit {
   constructor(private eventsService: EventsService) { }
 
   ngOnInit(): void {
-    // this.events$ = this.eventsService.getEvents$();
+    this.events$ = this.eventsService.getEvents$();
   }
 
   // addTicket() {
@@ -30,7 +30,7 @@ export class EventsComponent implements OnInit {
   //   }
   // }
 
-  // getAllEvents(){
-  //   this.events$ = this.eventsService.getEvents$();
-  // }
+  getAllEvents(){
+    this.events$ = this.eventsService.getEvents$();
+  }
 }
