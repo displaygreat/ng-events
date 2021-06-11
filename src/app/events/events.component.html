@@ -14,7 +14,7 @@
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
   <span class=" event-tag">attend for free</span>
-  <span class="counter-text">You added <span class="counter-number"></span>
+  <span class="counter-text">You added <span class="counter-number">{{ event.counter }}</span>
     tickets</span>
   <div class="counter-btns">
     <button class="counter-btn btn-plus" (click)="addTicket()">+</button>

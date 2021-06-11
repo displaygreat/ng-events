@@ -12,6 +12,9 @@ export class EventsComponent implements OnInit {
   // @Input()
   // event!: Event;
   events$!: Observable<Event[]>;
+  
+  @Input()
+  event!: Event;
 
   constructor(private eventsService: EventsService) { }
 
@@ -20,15 +23,15 @@ export class EventsComponent implements OnInit {
   }
 
   addTicket() {
-    // if (this.event.counter <10) {
-    // ++this.event.counter;
-    // }
+    if (this.event.counter <10) {
+    ++this.event.counter;
+    }
     console.log("+");    
   }
   removeTicket() {
-    // if (this.event.counter !== 0) {
-    // --this.event.counter;
-    // }
+    if (this.event.counter !== 0) {
+    --this.event.counter;
+    }
     console.log("-");
   }
 
