@@ -1,11 +1,7 @@
 {
-  "staticWebApps.appSubpath": "/",
-  "staticWebApps.apiSubpath": "api",
-  "staticWebApps.outputSubpath": "dist",
-  "azureFunctions.deploySubpath": "api",
-  "azureFunctions.postDeployTask": "npm install",
-  "azureFunctions.projectLanguage": "TypeScript",
-  "azureFunctions.projectRuntime": "~3",
-  "debug.internalConsoleOptions": "neverOpen",
-  "azureFunctions.preDeployTask": "npm prune"
+  "liveServer.settings.proxy": {
+  "enable": true,
+  "baseUri": "/api",
+  "proxyUri": "http://192.168.1.105:7071/api"
+  }
 }

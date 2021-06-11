@@ -25,13 +25,13 @@ export class AppComponent {
     {id: 3, name: 'HackaJoy', author: 'AngularNights', date: "03/07/21", time: "16:00", counter: 0},
   ]
   message = '';
-  helloEvent = '';
+  // helloEvent = '';
 
   constructor(private http: HttpClient) {
     this.http.get('/api/message')
       .subscribe((resp: any) => this.message = resp.text);
-    this.http.get('/api/getAllEvents')
-      .subscribe((resp: any) => this.helloEvent = resp.text);
+    // this.http.get('/api/getAllEvents')
+    //   .subscribe((resp: any) => this.helloEvent = resp.text);
   }
   
   toggleEvents () {
