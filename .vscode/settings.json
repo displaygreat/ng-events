@@ -1,4 +1,9 @@
-{
+{ 
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/api",
+    "proxyUri": "http://192.168.1.105:7071/api"
+  },
   "staticWebApps.appSubpath": "/",
   "staticWebApps.apiSubpath": "api",
   "staticWebApps.outputSubpath": "dist",

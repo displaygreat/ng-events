@@ -33,7 +33,7 @@ export class AppComponent {
   
   toggleEvents () {
     this.toggle = !this.toggle;
-    this.getAllEvents();
+    // this.getAllEvents();
   }
 
   async getAllEvents(){
