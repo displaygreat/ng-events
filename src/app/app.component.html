@@ -7,7 +7,9 @@
   <!-- <div *ngIf="toggle">
     <app-events *ngFor="let eventItem of events" [event]="eventItem"></app-events>
   </div> -->
-  <app-events></app-events>
+  <div *ngIf="toggle">
+    <app-events></app-events>
+  </div>
 </div>
 <p (click)="getAllEvents()">GET ALL EVENTS</p>
 <p>{{message}}</p>
