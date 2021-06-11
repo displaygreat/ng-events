@@ -10,13 +10,7 @@
 </div>
 <p>events works!</p> -->
 
-<!-- <ul>
-  <li *ngFor="let event of events$ | async">{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
-    event.time }}</li>
-  <p (click)="getAllEvents()">GET ALL EVENTS</p>
-</ul> -->
-
-<div *ngFor="let event of events$ | async">
+<div class="event-card" *ngFor="let event of events$ | async">
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
   <span class=" event-tag">attend for free</span>
@@ -27,5 +21,3 @@
     <button class="counter-btn btn-minus" (click)="removeTicket()">-</button>
   </div>
 </div>
-
-<p (click)="getAllEvents()">GET ALL EVENTS</p>
