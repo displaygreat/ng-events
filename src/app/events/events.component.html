@@ -11,6 +11,7 @@
 <p>events works!</p>
 
 <ul>
-  <li *ngFor="let event of events$ | async">{{ event.name }}</li>
+  <li *ngFor="let event of events$ | async">{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
+    event.time }}</li>
   <p (click)="getAllEvents()">GET ALL EVENTS</p>
 </ul>

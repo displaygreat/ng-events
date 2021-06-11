@@ -20,7 +20,7 @@
       "direction": "in",
       "databaseName": "ng-events",
       "collectionName": "events",
-      "sqlQuery": "SELECT c.id, c.name FROM c",
+      "sqlQuery": "SELECT * from c",
       "connectionStringSetting": "CosmosDBConnection"   
     }
   ],

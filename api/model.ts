@@ -4,15 +4,13 @@ export class Events {
     private _author: string;
     private _date: string;
     private _time: string;
-    private _counter: number
 
-    public constructor(id: string, name: string, author: string, date: string, time: string, counter: number) {
+    public constructor(id: string, name: string, author: string, date: string, time: string) {
         this._id = id;
         this._name = name;
         this._author = author;
         this._date = date;
         this._time = time;
-        this._counter = counter;
     }
 
     public get id(){
@@ -25,10 +23,6 @@ export class Events {
 
     public get author(){
         return this._author;
-    }
-
-    public get counter(){
-        return this._counter;
     }
 
     public get time(){
@@ -57,9 +51,5 @@ export class Events {
 
     public set time(time: string){
         this._time = time;
-    }
-    
-    public set counter(counter: number){
-        this._counter = counter;
     }
 }
