@@ -19,16 +19,18 @@ export class EventsComponent implements OnInit {
     this.events$ = this.eventsService.getEvents$();
   }
 
-  // addTicket() {
-  //   if (this.event.counter <10) {
-  //   ++this.event.counter;
-  //   }    
-  // }
-  // removeTicket() {
-  //   if (this.event.counter !== 0) {
-  //   --this.event.counter;
-  //   }
-  // }
+  addTicket() {
+    // if (this.event.counter <10) {
+    // ++this.event.counter;
+    // }
+    console.log("+");    
+  }
+  removeTicket() {
+    // if (this.event.counter !== 0) {
+    // --this.event.counter;
+    // }
+    console.log("-");
+  }
 
   getAllEvents(){
     this.events$ = this.eventsService.getEvents$();
