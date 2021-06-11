@@ -41,4 +41,8 @@ export class AppComponent {
     const payload = await response.json();     
     console.dir(payload);
   }
+
+  logClick(e: any) {
+    console.log('title clicked', e);
+  }
 }
