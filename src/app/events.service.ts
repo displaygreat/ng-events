@@ -21,5 +21,6 @@ export class EventsService {
   getEvents$(): Observable<Event[]> {
     return this.httpClient.get<Event[]>('/api/getAllEvents')
   }
+
 }
 

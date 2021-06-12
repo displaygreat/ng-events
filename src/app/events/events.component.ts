@@ -12,22 +12,39 @@ export class EventsComponent implements OnInit {
   // @Input()
   // event!: Event;
   events$!: Observable<Event[]>;
+  // eventItems: Event[] = [];
 
   constructor(private eventsService: EventsService) { }
 
   ngOnInit(): void {
     this.events$ = this.eventsService.getEvents$();
+    // this.getEventItems();
+    // console.log(this.eventItems);
   }
 
+  public count: number = 0;
+
+  // getEventItems() {
+  //   this.eventsService.getEvents$().subscribe(result => {
+  //   this.eventItems = result;
+  //   });
+  // }
+
   addTicket() {
-    // if (this.event.counter <10) {
-    // ++this.event.counter;
+    // for (let i = 0; i<this.eventItems.length; i++){
+    //   if (this.eventItems[i].counter <10) {
+    //     ++this.eventItems[i].counter;
+    //     console.log(this.eventItems[i].counter);
+    //   }
     // }
-    console.log("+");    
+    console.log("+");  
   }
   removeTicket() {
-    // if (this.event.counter !== 0) {
-    // --this.event.counter;
+    // for (let i = 0; i<this.eventItems.length; i++){
+    //   if (this.eventItems[i].counter !== 0) {
+    //     --this.eventItems[i].counter;
+    //     console.log(this.eventItems[i].counter);
+    //   }
     // }
     console.log("-");
   }
