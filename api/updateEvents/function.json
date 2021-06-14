@@ -21,8 +21,6 @@
       "type": "cosmosDB",
       "databaseName": "ng-events",
       "collectionName": "events",
-      "id" : "{name}",
-      "partitionKey": "{events}",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },
