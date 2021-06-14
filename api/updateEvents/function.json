@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "updateEvents/{name}"
+      "route": "updateEvents"
     },
     {
       "type": "http",
