@@ -1,0 +1,39 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "updateEvents/{name}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "existingProject",
+      "type": "cosmosDB",
+      "databaseName": "ng-events",
+      "collectionName": "events",
+      "id" : "{name}",
+      "partitionKey": "{events}",
+      "connectionStringSetting": "CosmosDBConnection",
+      "direction": "in"
+  },
+  {
+    "name": "projectSaver",
+    "type": "cosmosDB",
+    "databaseName": "ng-events",
+    "collectionName": "events",
+    "connectionStringSetting": "CosmosDBConnection",
+    "direction": "out"
+  }
+  ],
+  "scriptFile": "../dist/updateEvents/index.js"
+}

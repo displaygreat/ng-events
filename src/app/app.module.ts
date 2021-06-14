@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
 import { PostsComponent } from './posts/posts.component';
+import { FormsModule } from '@angular/forms';
+import { EventsService } from './events.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { PostsComponent } from './posts/posts.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

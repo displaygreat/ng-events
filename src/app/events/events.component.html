@@ -10,14 +10,19 @@
 </div>
 <p>events works!</p> -->
 
-<div class="event-card" *ngFor="let event of events$ | async">
+<div class="event-card" *ngFor="let event of events; let i = index">
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
-  <span class=" event-tag">attend for free</span>
-  <span class="counter-text">You added <span class="counter-number">{{ event.counter }}</span>
+  <span class="counter-text"><span class="num-slots">{{ event.slots }}</span> tickets available</span>
+  <span class="counter-text">You added <input type="text" id="buyNumInput" class="num-tickets"
+      [(ngModel)]="buyNumInput[i]">
     tickets</span>
   <div class="counter-btns">
-    <button class="counter-btn btn-plus" (click)="addTicket()">+</button>
-    <button class="counter-btn btn-minus" (click)="removeTicket()">-</button>
+    <!-- <button class="counter-btn btn-plus" (click)="addTicket(i)">+</button>
+    <button class="counter-btn btn-minus" (click)="removeTicket(i)">-</button> -->
+    <button class="counter-btn btn-plus" (click)="onPlusClick(i)">+</button>
+    <button class="counter-btn btn-minus" (click)="onMinusClick(i)">-</button>
+    <!-- <input type="text" id="buyNumInput" class="buyNum" [(ngModel)]="buyNumInput[i]"> -->
   </div>
+  <button class="confirm-btn" (click)="update()">Confirm</button>
 </div>

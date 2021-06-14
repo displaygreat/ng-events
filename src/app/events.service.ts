@@ -8,7 +8,7 @@ export interface Event {
   author: string;
   date: string;
   time: string;
-  counter: number;
+  slots: number;
 }
 
 @Injectable({
