@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "updateEvents"
+      "route": "updateEvents/{id}"
     },
     {
       "type": "http",
@@ -21,6 +21,8 @@
       "type": "cosmosDB",
       "databaseName": "ng-events",
       "collectionName": "events",
+      "id" : "{id}",
+      "partitionKey": "{events}",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },

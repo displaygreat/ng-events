@@ -20,8 +20,9 @@ export class EventsComponent implements OnInit {
 
   buyNumInput: any = [];
 
-  name: string = '';
-  slots: number = 0;
+
+  idArr: any = [];
+  slotsArr: any = [];
 
   constructor(private eventsService: EventsService) { }
 
@@ -36,6 +37,10 @@ export class EventsComponent implements OnInit {
           for (let i = 0; i < this.events.length; i++) {
             this.buyNumInput.push(0);
           }
+          for (let i = 0; i < this.events.length; i++) {
+            this.idArr.push(this.events[i].slots);
+          }
+          console.log(this.slotsArr);
         },
       })
   }
@@ -106,12 +111,12 @@ export class EventsComponent implements OnInit {
   //   this.events$ = this.eventsService.getEvents$();
   // }
 
-  async update(){
+  async update(i: any){
     const payload = {
-      "slots": this.slots,
+      "slots": 4,
     }
 
-    const response = await fetch(`/api/updateEvents`, {
+    const response = await fetch(`/api/updateEvents/${i+1}`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
