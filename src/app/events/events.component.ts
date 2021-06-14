@@ -116,7 +116,7 @@ export class EventsComponent implements OnInit {
       "slots": 4,
     }
 
-    const response = await fetch(`/api/updateEvents/${i+1}`, {
+    const response = await fetch(`/api/updateEvents/events/${i+1}`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
