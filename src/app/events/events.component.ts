@@ -107,17 +107,17 @@ export class EventsComponent implements OnInit {
   // }
 
   async update(){
-  //   const payload = {
-  //     "slots": this.slots,
-  //   }
+    const payload = {
+      "slots": this.slots,
+    }
 
-  //   const response = await fetch(`/api/updateEvents`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(payload)
-  //   });
+    const response = await fetch(`/api/updateEvents`, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
 
-  //   const responsePayload = await response.json();
-  //   console.dir(responsePayload);
+    const responsePayload = await response.json();
+    console.dir(responsePayload);
     console.log('update');
   }
   
