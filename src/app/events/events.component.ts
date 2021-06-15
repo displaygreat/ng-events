@@ -116,7 +116,7 @@ export class EventsComponent implements OnInit {
       "slots": 12,
     }
 
-    const response = await fetch(`/api/updateEvents/${i}`, {
+    const response = await fetch(`/api/updateEvents/HackaJoy`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
