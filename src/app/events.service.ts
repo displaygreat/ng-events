@@ -24,12 +24,12 @@ export class EventsService {
   createEvent(): Observable<Event> {
      return this.httpClient.post<Event>('api/createEvent', 
         {
-          id: "HackaDance", 
-          name: 'HackaDance',
+          id: "HackaSwim", 
+          name: 'HackaSwim',
           author: 'AngularNights', 
-          date: '30/07/21', 
-          time: '23:00',
-          slots: '74'
+          date: '02/08/21', 
+          time: '24:00',
+          slots: '84'
         }
      );
   }

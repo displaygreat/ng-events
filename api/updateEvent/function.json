@@ -20,7 +20,7 @@
       "databaseName": "ng-tickets",
       "collectionName": "name",
       "id" : "{name}",
-      "partitionKey": "{name}",
+      "partitionKey": "name",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },

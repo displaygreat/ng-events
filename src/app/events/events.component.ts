@@ -20,6 +20,23 @@ export class EventsComponent implements OnInit {
   constructor(private eventsService: EventsService) { }
 
   ngOnInit(): void {
+    // this.eventsService.getEvents$()
+    //   .subscribe({
+    //     next: data => this.events = data,
+    //     complete: () => {
+    //       for (let i = 0; i < this.events.length; i++) {
+    //         this.numInput.push(0);
+    //       }
+    //       for (let i = 0; i < this.events.length; i++) {
+    //         this.slotsArr.push(this.events[i].slots);
+    //       }
+    //       console.log(this.slotsArr);
+    //     },
+    //   })
+    this.getAllEvents();
+  }
+
+  getAllEvents() {
     this.eventsService.getEvents$()
       .subscribe({
         next: data => this.events = data,
@@ -65,25 +82,17 @@ export class EventsComponent implements OnInit {
         "time": time,
         "slots": slots - this.numInput[i],
     }
-    this.eventsService.updateEvent(payload).subscribe(
-        event => {
-          console.log(event);
+    // this.eventsService.updateEvent(payload).subscribe(
+    //     event => {
+    //       console.log(event);
+    //     }
+    // );
+    this.eventsService.updateEvent(payload).subscribe({
+        next: event => console.log(event),
+        complete: () => this.getAllEvents(),
         }
-    );
-
-    this.eventsService.getEvents$()
-      .subscribe({
-        next: data => this.events = data,
-        complete: () => {
-          for (let i = 0; i < this.events.length; i++) {
-            this.numInput.push(0);
-          }
-          for (let i = 0; i < this.events.length; i++) {
-            this.slotsArr.push(this.events[i].slots);
-          }
-          console.log(this.slotsArr);
-        },
-      })
+      );
+    
   }
   
 }
