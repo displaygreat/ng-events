@@ -32,6 +32,9 @@ export class EventsService {
           slots: '64'
         }
      );
+  }
+  addEvent(event: Event): Observable<Event> {
+     return this.httpClient.post<Event>('api/updateEvents/{name}', event);
   } 
 
 }

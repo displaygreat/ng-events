@@ -113,10 +113,6 @@ export class EventsComponent implements OnInit {
 
   async update(i: any){
     const payload = {
-      "name": "HackaWin",
-      "author": "AngularNights",
-      "date": "22/07/21",
-      "time": "22:00",
       "slots": 12,
     }
 
@@ -136,6 +132,14 @@ export class EventsComponent implements OnInit {
         console.log(event);
       }
   );
-} 
+}
+
+addEvent(event: Event) {
+  this.eventsService.addEvent(event).subscribe(
+      event => {
+        console.log(event);
+      }
+  );
+}
   
 }
