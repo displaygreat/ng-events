@@ -20,16 +20,11 @@ export class EventsComponent implements OnInit {
 
   buyNumInput: any = [];
 
-
-  idArr: any = [];
   slotsArr: any = [];
 
   constructor(private eventsService: EventsService) { }
 
   ngOnInit(): void {
-    // this.events$ = this.eventsService.getEvents$();
-    // this.getEventItems();
-    // console.log(this.eventItems);
     this.eventsService.getEvents$()
       .subscribe({
         next: data => this.events = data,
@@ -38,61 +33,12 @@ export class EventsComponent implements OnInit {
             this.buyNumInput.push(0);
           }
           for (let i = 0; i < this.events.length; i++) {
-            this.idArr.push(this.events[i].slots);
+            this.slotsArr.push(this.events[i].slots);
           }
           console.log(this.slotsArr);
         },
       })
   }
-
-  public count: number = 0;
-
-  // getEventItems() {
-  //   this.eventsService.getEvents$().subscribe(result => {
-  //   this.eventItems = result;
-  //   });
-
-  // getEventItems() {
-  //   this.eventsService.getEvents$().subscribe(result => {
-  //     this.events = result;
-  //   });
-  // }
-
-  // addTicket(id: any) {
-  //   // for (let i = 0; i<this.eventItems.length; i++){
-  //   //   if (this.eventItems[i].counter <10) {
-  //   //     ++this.eventItems[i].counter;
-  //   //     console.log(this.eventItems[i].counter);
-  //   //   }
-  //   // }
-  //   for (let i = 0; i<this.events.length; i++){
-  //     if (this.events[i].counter <10) {
-  //       if(id === i) {
-  //         ++this.events[i].counter;
-  //         console.log(this.events[i].counter);
-  //       }
-  //     }
-  //   }
-  //   console.log("+");  
-  // }
-  // removeTicket(id: any) {
-  //   // for (let i = 0; i<this.eventItems.length; i++){
-  //   //   if (this.eventItems[i].counter !== 0) {
-  //   //     --this.eventItems[i].counter;
-  //   //     console.log(this.eventItems[i].counter);
-  //   //   }
-  //   // }
-    
-  //   for (let i = 0; i<this.events.length; i++){
-  //     if (this.events[i].counter !== 0) {
-  //       if(id === i) {
-  //         --this.events[i].counter;
-  //         console.log(this.events[i].counter);
-  //       }
-  //     }
-  //   }
-  //   console.log("-");
-  // }
 
   onPlusClick(i: number) {
     this.buyNumInput[i]++;
@@ -107,52 +53,48 @@ export class EventsComponent implements OnInit {
       console.log(this.buyNumInput);
   }
 
-  // getAllEvents(){
-  //   this.events$ = this.eventsService.getEvents$();
+  // async update(name: string, author: string, date: string, time: string){
+  //   const payload = {
+  //     "id": name,
+  //     "name": name,
+  //     "author": author,
+  //     "date": date,
+  //     "time": time,
+  //     "slots": 12,
+  //   }
+
+  //   const response = await fetch(`/api/updateEvents`, {
+  //     method: 'POST',
+  //     body: JSON.stringify(payload)
+  //   });
+
+  //   const responsePayload = await response.json();
+  //   console.dir(responsePayload);
+  //   console.log('update');
   // }
-
-  async update(name: string, author: string, date: string, time: string){
-    const payload = {
-      "id": name,
-      "name": name,
-      "author": author,
-      "date": date,
-      "time": time,
-      "slots": 12,
-    }
-
-    const response = await fetch(`/api/updateEvents`, {
-      method: 'POST',
-      body: JSON.stringify(payload)
-    });
-
-    const responsePayload = await response.json();
-    console.dir(responsePayload);
-    console.log('update');
-  }
 
   createEvent() {
   this.eventsService.createEvent().subscribe(
       event => {
         console.log(event);
       }
-  );
-}
-
-addEvent(name: string, author: string, date: string, time: string) {
-  const payload = {
-      "id": name,
-      "name": name,
-      "author": author,
-      "date": date,
-      "time": time,
-      "slots": 12,
+    );
   }
-  this.eventsService.addEvent(payload).subscribe(
-      event => {
-        console.log(event);
-      }
-  );
-}
+
+  addEvent(name: string, author: string, date: string, time: string, slots: number, i: number) {
+    const payload = {
+        "id": name,
+        "name": name,
+        "author": author,
+        "date": date,
+        "time": time,
+        "slots": slots - this.buyNumInput[i],
+    }
+    this.eventsService.addEvent(payload).subscribe(
+        event => {
+          console.log(event);
+        }
+    );
+  }
   
 }
