@@ -7,8 +7,7 @@
       "name": "req",
       "methods": [
         "post"
-      ],
-      "route": "addEvent/name/HackaJoy"
+      ]
     },
     {
       "type": "http",
