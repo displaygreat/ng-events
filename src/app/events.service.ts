@@ -22,23 +22,19 @@ export class EventsService {
     return this.httpClient.get<Event[]>('/api/getAllEvents')
   }
   createEvent(): Observable<Event> {
-     return this.httpClient.post<Event>('api/updateEvents', 
+     return this.httpClient.post<Event>('api/createEvent', 
         {
-          id: "HackaWin", 
-          name: 'HackaWin',
+          id: "HackaDance", 
+          name: 'HackaDance',
           author: 'AngularNights', 
-          date: '22/07/21', 
-          time: '22:00',
-          slots: '64'
+          date: '30/07/21', 
+          time: '23:00',
+          slots: '74'
         }
      );
   }
-  addEvent(event: Event): Observable<Event> {
-     return this.httpClient.post<Event>('api/addEvent', event);
-  }
-  
-  editById(event: Event, name: string): Observable<Event> {
-     return this.httpClient.post<Event>(`api/editById/name/${name}`, event);
+  updateEvent(event: Event): Observable<Event> {
+     return this.httpClient.post<Event>('api/updateEvent', event);
   }
 
 }

@@ -6,6 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": [
+        "get",
         "post"
       ]
     },
@@ -20,7 +21,7 @@
       "databaseName": "ng-tickets",
       "collectionName": "name",
       "id" : "{name}",
-      "partitionKey": "{name}",
+      "partitionKey": "name",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },
@@ -33,5 +34,5 @@
     "direction": "out"
   }
   ],
-  "scriptFile": "../dist/addEvent/index.js"
+  "scriptFile": "../dist/createEvent/index.js"
 }

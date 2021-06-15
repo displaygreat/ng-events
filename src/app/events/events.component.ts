@@ -9,16 +9,11 @@ import {Observable} from 'rxjs';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  // @Input()
-  // event!: Event;
-
-  events$!: Observable<Event[]>;
-
-  // eventItems: Event[] = [];
+  // events$!: Observable<Event[]>;
 
   events: Event[] = [];
 
-  buyNumInput: any = [];
+  numInput: any = [];
 
   slotsArr: any = [];
 
@@ -30,7 +25,7 @@ export class EventsComponent implements OnInit {
         next: data => this.events = data,
         complete: () => {
           for (let i = 0; i < this.events.length; i++) {
-            this.buyNumInput.push(0);
+            this.numInput.push(0);
           }
           for (let i = 0; i < this.events.length; i++) {
             this.slotsArr.push(this.events[i].slots);
@@ -41,66 +36,54 @@ export class EventsComponent implements OnInit {
   }
 
   onPlusClick(i: number) {
-    this.buyNumInput[i]++;
-    console.log(this.buyNumInput[i]);
-    console.log(this.buyNumInput);
+    this.numInput[i]++;
+    console.log(this.numInput[i]);
+    console.log(this.numInput);
   }
 
   onMinusClick(i: number) {
-    if (this.buyNumInput[i] > 0)
-      this.buyNumInput[i]--;
-      console.log(this.buyNumInput[i]);
-      console.log(this.buyNumInput);
-  }
-
-  async editById(name: string, slots: number, i: number){
-    const payload = {
-      "slots": slots - this.buyNumInput[i],
-    }
-
-    const response = await fetch(`/api/editById/name/${name}`, {
-      method: 'POST',
-      body: JSON.stringify(payload)
-    });
-
-    const responsePayload = await response.json();
-    console.dir(responsePayload);
-    console.log('editById');
+    if (this.numInput[i] > 0)
+      this.numInput[i]--;
+      console.log(this.numInput[i]);
+      console.log(this.numInput);
   }
 
   createEvent() {
-  this.eventsService.createEvent().subscribe(
+    this.eventsService.createEvent().subscribe(
       event => {
         console.log(event);
       }
     );
   }
 
-  addEvent(name: string, author: string, date: string, time: string, slots: number, i: number) {
+  updateEvent(name: string, author: string, date: string, time: string, slots: number, i:   number) {
     const payload = {
         "id": name,
         "name": name,
         "author": author,
         "date": date,
         "time": time,
-        "slots": slots - this.buyNumInput[i],
+        "slots": slots - this.numInput[i],
     }
-    this.eventsService.addEvent(payload).subscribe(
+    this.eventsService.updateEvent(payload).subscribe(
         event => {
           console.log(event);
         }
     );
-  }
 
-  // editById(name: string, author: string, date: string, time: string, slots: number, i: number) {
-  //   const payload = {
-  //       "slots": slots - this.buyNumInput[i],
-  //   }
-  //   this.eventsService.editById(payload).subscribe(
-  //       event => {
-  //         console.log(event);
-  //       }
-  //   );
-  // }
+    this.eventsService.getEvents$()
+      .subscribe({
+        next: data => this.events = data,
+        complete: () => {
+          for (let i = 0; i < this.events.length; i++) {
+            this.numInput.push(0);
+          }
+          for (let i = 0; i < this.events.length; i++) {
+            this.slotsArr.push(this.events[i].slots);
+          }
+          console.log(this.slotsArr);
+        },
+      })
+  }
   
 }

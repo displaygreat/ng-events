@@ -14,8 +14,7 @@
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
   <span class="counter-text"><span class="num-slots">{{ event.slots }}</span> tickets available</span>
-  <span class="counter-text">You added <input type="text" id="buyNumInput" class="num-tickets"
-      [(ngModel)]="buyNumInput[i]">
+  <span class="counter-text">You added <input type="text" id="numInput" class="num-tickets" [(ngModel)]="numInput[i]">
     tickets</span>
   <div class="counter-btns">
     <!-- <button class="counter-btn btn-plus" (click)="addTicket(i)">+</button>
@@ -24,8 +23,8 @@
     <button class="counter-btn btn-minus" (click)="onMinusClick(i)">-</button>
     <!-- <input type="text" id="buyNumInput" class="buyNum" [(ngModel)]="buyNumInput[i]"> -->
   </div>
-  <button class="confirm-btn" (click)="createEvent()">Confirm</button>
   <button class="confirm-btn"
-    (click)="addEvent(event.name, event.author, event.date, event.time, event.slots, i)">update</button>
-  <button class="confirm-btn" (click)="editById(event.name, event.slots, i)">update</button>
+    (click)="updateEvent(event.name, event.author, event.date, event.time, event.slots, i)">Confirm</button>
+  <button class="confirm-btn" (click)="createEvent()">Add Event</button>
+
 </div>

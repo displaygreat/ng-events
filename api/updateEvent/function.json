@@ -7,8 +7,7 @@
       "name": "req",
       "methods": [
         "post"
-      ],
-      "route": "editById/name/{name}"
+      ]
     },
     {
       "type": "http",
@@ -21,8 +20,8 @@
       "databaseName": "ng-tickets",
       "collectionName": "name",
       "id" : "{name}",
-      "partitionKey": "name",
-      "connectionStringSetting": "CosmosConnectionString",
+      "partitionKey": "{name}",
+      "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },
   {
@@ -30,9 +29,9 @@
     "type": "cosmosDB",
     "databaseName": "ng-tickets",
     "collectionName": "name",
-    "connectionStringSetting": "CosmosConnectionString",
+    "connectionStringSetting": "CosmosDBConnection",
     "direction": "out"
   }
   ],
-  "scriptFile": "../dist/editById/index.js"
+  "scriptFile": "../dist/updateEvent/index.js"
 }
