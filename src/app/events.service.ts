@@ -35,7 +35,11 @@ export class EventsService {
   }
   addEvent(event: Event): Observable<Event> {
      return this.httpClient.post<Event>('api/addEvent', event);
-  } 
+  }
+  
+  editById(event: Event, name: string): Observable<Event> {
+     return this.httpClient.post<Event>(`api/editById/${name}`, event);
+  }
 
 }
 

@@ -53,25 +53,21 @@ export class EventsComponent implements OnInit {
       console.log(this.buyNumInput);
   }
 
-  // async update(name: string, author: string, date: string, time: string){
-  //   const payload = {
-  //     "id": name,
-  //     "name": name,
-  //     "author": author,
-  //     "date": date,
-  //     "time": time,
-  //     "slots": 12,
-  //   }
+  async editById(name: string, slots: number, i: number){
+    const payload = {
+      "id": name,
+      "slots": slots - this.buyNumInput[i],
+    }
 
-  //   const response = await fetch(`/api/updateEvents`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(payload)
-  //   });
+    const response = await fetch(`/api/editById/${name}`, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
 
-  //   const responsePayload = await response.json();
-  //   console.dir(responsePayload);
-  //   console.log('update');
-  // }
+    const responsePayload = await response.json();
+    console.dir(responsePayload);
+    console.log('editById');
+  }
 
   createEvent() {
   this.eventsService.createEvent().subscribe(
@@ -96,5 +92,16 @@ export class EventsComponent implements OnInit {
         }
     );
   }
+
+  // editById(name: string, author: string, date: string, time: string, slots: number, i: number) {
+  //   const payload = {
+  //       "slots": slots - this.buyNumInput[i],
+  //   }
+  //   this.eventsService.editById(payload).subscribe(
+  //       event => {
+  //         console.log(event);
+  //       }
+  //   );
+  // }
   
 }

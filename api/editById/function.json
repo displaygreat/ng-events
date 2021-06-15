@@ -1,0 +1,38 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "editById/{name}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "existingProject",
+      "type": "cosmosDB",
+      "databaseName": "ng-tickets",
+      "collectionName": "name",
+      "id" : "{name}",
+      "partitionKey": "name",
+      "connectionStringSetting": "CosmosConnectionString",
+      "direction": "in"
+  },
+  {
+    "name": "projectSaver",
+    "type": "cosmosDB",
+    "databaseName": "ng-tickets",
+    "collectionName": "name",
+    "connectionStringSetting": "CosmosConnectionString",
+    "direction": "out"
+  }
+  ],
+  "scriptFile": "../dist/editById/index.js"
+}
