@@ -55,11 +55,10 @@ export class EventsComponent implements OnInit {
 
   async editById(name: string, slots: number, i: number){
     const payload = {
-      "id": name,
       "slots": slots - this.buyNumInput[i],
     }
 
-    const response = await fetch(`/api/editById/${name}`, {
+    const response = await fetch(`/api/editById/name/${name}`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });

@@ -8,7 +8,7 @@
       "methods": [
         "post"
       ],
-      "route": "editById/{name}"
+      "route": "editById/name/{name}"
     },
     {
       "type": "http",

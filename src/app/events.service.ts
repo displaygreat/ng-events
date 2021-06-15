@@ -38,7 +38,7 @@ export class EventsService {
   }
   
   editById(event: Event, name: string): Observable<Event> {
-     return this.httpClient.post<Event>(`api/editById/${name}`, event);
+     return this.httpClient.post<Event>(`api/editById/name/${name}`, event);
   }
 
 }
