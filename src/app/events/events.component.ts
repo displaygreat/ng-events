@@ -111,12 +111,17 @@ export class EventsComponent implements OnInit {
   //   this.events$ = this.eventsService.getEvents$();
   // }
 
-  async update(name: any){
+  async update(name: string, author: string, date: string, time: string){
     const payload = {
+      "id": name,
+      "name": name,
+      "author": author,
+      "date": date,
+      "time": time,
       "slots": 12,
     }
 
-    const response = await fetch(`/api/updateEvents/${name}`, {
+    const response = await fetch(`/api/updateEvents`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
@@ -134,8 +139,16 @@ export class EventsComponent implements OnInit {
   );
 }
 
-addEvent(event: Event) {
-  this.eventsService.addEvent(event).subscribe(
+addEvent(name: string, author: string, date: string, time: string) {
+  const payload = {
+      "id": name,
+      "name": name,
+      "author": author,
+      "date": date,
+      "time": time,
+      "slots": 12,
+  }
+  this.eventsService.addEvent(payload).subscribe(
       event => {
         console.log(event);
       }

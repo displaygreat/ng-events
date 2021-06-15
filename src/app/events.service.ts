@@ -34,7 +34,7 @@ export class EventsService {
      );
   }
   addEvent(event: Event): Observable<Event> {
-     return this.httpClient.post<Event>('api/addEvents/{name}', event);
+     return this.httpClient.post<Event>('api/addEvent', event);
   } 
 
 }
