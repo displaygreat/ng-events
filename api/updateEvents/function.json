@@ -8,8 +8,7 @@
       "methods": [
         "get",
         "post"
-      ],
-      "route": "updateEvents/events/{id}"
+      ]
     },
     {
       "type": "http",
@@ -19,18 +18,18 @@
     {
       "name": "existingProject",
       "type": "cosmosDB",
-      "databaseName": "ng-events",
-      "collectionName": "events",
-      "id" : "{id}",
-      "partitionKey": "{events}",
+      "databaseName": "ng-tickets",
+      "collectionName": "name",
+      "id" : "{name}",
+      "partitionKey": "{name}",
       "connectionStringSetting": "CosmosDBConnection",
       "direction": "in"
   },
   {
     "name": "projectSaver",
     "type": "cosmosDB",
-    "databaseName": "ng-events",
-    "collectionName": "events",
+    "databaseName": "ng-tickets",
+    "collectionName": "name",
     "connectionStringSetting": "CosmosDBConnection",
     "direction": "out"
   }

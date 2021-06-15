@@ -3,29 +3,29 @@ import { Events } from "../model";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 
-    if(!req.params.id || !req.body.name || !req.body.author || req.body.date || req.body.time || req.body.slots)
-    {
-        context.log('Bad request, missing data');
+    // if(!req.params.id || !req.body.name || !req.body.author || req.body.date || req.body.time || req.body.slots)
+    // {
+    //     context.log('Bad request, missing data');
 
-        context.res = {
-            status: 400
-        };
+    //     context.res = {
+    //         status: 400
+    //     };
 
-        return;
-    }
+    //     return;
+    // }
 
-    if(!context.bindings.existingProject)
-    {
-        context.log('Project was not found');
+    // if(!context.bindings.existingProject)
+    // {
+    //     context.log('Project was not found');
 
-        context.res = {
-            status: 404
-        };
+    //     context.res = {
+    //         status: 404
+    //     };
 
-        return;
-    }
+    //     return;
+    // }
 
-    const entry = new Events(req.body.id, req.body.name, req.body.author, req.body.date, req.body.time, req.body.slots);
+    const entry = new Events(req.body.name, req.body.name, req.body.author, req.body.date, req.body.time, req.body.slots);
 
     context.log(`Adding new entry`);
 
@@ -35,6 +35,8 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         // status: 200, /* Defaults to 200 */
         body: entry,
     };
+
+    context.log('Send events from Cosmos');
 
 };
 

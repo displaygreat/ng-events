@@ -113,10 +113,14 @@ export class EventsComponent implements OnInit {
 
   async update(i: any){
     const payload = {
-      "slots": 4,
+      "name": "HackaWin",
+      "author": "AngularNights",
+      "date": "22/07/21",
+      "time": "22:00",
+      "slots": 12,
     }
 
-    const response = await fetch(`/api/updateEvents/events/${i+1}`, {
+    const response = await fetch(`/api/updateEvents/${i}`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
@@ -125,5 +129,13 @@ export class EventsComponent implements OnInit {
     console.dir(responsePayload);
     console.log('update');
   }
+
+  createEvent() {
+  this.eventsService.createEvent().subscribe(
+      event => {
+        console.log(event);
+      }
+  );
+} 
   
 }

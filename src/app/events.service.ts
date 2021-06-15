@@ -21,6 +21,18 @@ export class EventsService {
   getEvents$(): Observable<Event[]> {
     return this.httpClient.get<Event[]>('/api/getAllEvents')
   }
+  createEvent(): Observable<Event> {
+     return this.httpClient.post<Event>('api/updateEvents', 
+        {
+          id: "HackaWin", 
+          name: 'HackaWin',
+          author: 'AngularNights', 
+          date: '22/07/21', 
+          time: '22:00',
+          slots: '64'
+        }
+     );
+  } 
 
 }
 
