@@ -111,12 +111,12 @@ export class EventsComponent implements OnInit {
   //   this.events$ = this.eventsService.getEvents$();
   // }
 
-  async update(i: any){
+  async update(name: any){
     const payload = {
       "slots": 12,
     }
 
-    const response = await fetch(`/api/updateEvents`, {
+    const response = await fetch(`/api/updateEvents/${name}`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
