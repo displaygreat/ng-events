@@ -15,7 +15,7 @@ export class EventsComponent implements OnInit {
 
   numInput: any = [];
 
-  slotsArr: any = [];
+  // slotsArr: any = [];
 
   constructor(private eventsService: EventsService) { }
 
@@ -42,12 +42,13 @@ export class EventsComponent implements OnInit {
         next: data => this.events = data,
         complete: () => {
           for (let i = 0; i < this.events.length; i++) {
+            this.numInput = [];
             this.numInput.push(0);
           }
-          for (let i = 0; i < this.events.length; i++) {
-            this.slotsArr.push(this.events[i].slots);
-          }
-          console.log(this.slotsArr);
+          // for (let i = 0; i < this.events.length; i++) {
+          //   this.slotsArr.push(this.events[i].slots);
+          // }
+          // console.log(this.slotsArr);
         },
       })
   }
