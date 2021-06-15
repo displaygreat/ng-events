@@ -41,8 +41,8 @@ export class EventsComponent implements OnInit {
       .subscribe({
         next: data => this.events = data,
         complete: () => {
+          this.numInput = [];
           for (let i = 0; i < this.events.length; i++) {
-            this.numInput = [];
             this.numInput.push(0);
           }
           // for (let i = 0; i < this.events.length; i++) {
