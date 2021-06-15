@@ -1,65 +1,65 @@
 export class Events {
-    private _id: string;
-    private _name: string;
-    private _author: string;
-    private _date: string;
-    private _time: string;
-    private _slots: number
+    private id: string;
+    private name: string;
+    private author: string;
+    private date: string;
+    private time: string;
+    private slots: number
 
     public constructor(id: string, name: string, author: string, date: string, time: string, slots: number) {
-        this._id = id;
-        this._name = name;
-        this._author = author;
-        this._date = date;
-        this._time = time;
-        this._slots = slots;
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.date = date;
+        this.time = time;
+        this.slots = slots;
     }
 
-    public get id(){
-        return this._id;
+    public get _id(){
+        return this.id;
     }
 
-    public get name(){
-        return this._name;
+    public get _name(){
+        return this.name;
     }
 
-    public get author(){
-        return this._author;
+    public get _author(){
+        return this.author;
     }
 
-    public get slots(){
-        return this._slots;
+    public get _slots(){
+        return this.slots;
     }
 
-    public get time(){
-        return this._time;
+    public get _time(){
+        return this.time;
     }
 
-    public get date(){
-        return this._date;
+    public get _date(){
+        return this.date;
     }
 
-    public set id(id: string){
-        this._id = id;
+    public set _id(id: string){
+        this.id = id;
     }
 
-    public set name(name: string){
-        this._name = name;
+    public set _name(name: string){
+        this.name = name;
     }
 
-    public set author(author: string){
-        this._author = author;
+    public set _author(author: string){
+        this.author = author;
     }
 
-    public set date(date: string){
-        this._date = date;
+    public set _date(date: string){
+        this.date = date;
     }
 
-    public set time(time: string){
-        this._time = time;
+    public set _time(time: string){
+        this.time = time;
     }
     
-    public set slots(slots: number){
-        this._slots = slots;
+    public set _slots(slots: number){
+        this.slots = slots;
     }
 }
