@@ -90,7 +90,10 @@ export class EventsComponent implements OnInit {
     // );
     this.eventsService.updateEvent(payload).subscribe({
         next: event => console.log(event),
-        complete: () => this.getAllEvents(),
+        complete: () => {
+          alert(`You added ${this.numInput[i]} tickets`)
+          this.getAllEvents()
+        },
         }
       );
     
