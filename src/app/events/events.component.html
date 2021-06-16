@@ -2,7 +2,7 @@
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
   <span class="counter-text"><span class="num-slots">{{ event.slots }}</span> tickets available</span>
-  <span class="counter-text">You added <input type="text" id="numInput" class="num-tickets" [(ngModel)]="numInput[i]">
+  <span class="counter-text">You added <input type="text" name="numInput" class="num-tickets" [(ngModel)]="numInput[i]">
     tickets</span>
   <div class="counter-btns">
     <button class="counter-btn btn-plus" (click)="onPlusClick(i)">+</button>

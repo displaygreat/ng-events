@@ -8,7 +8,6 @@ import { EventsService, Event } from '../events.service';
 })
 export class EventsComponent implements OnInit {
   events: Event[] = [];
-
   numInput: any = [];
 
   constructor(private eventsService: EventsService) { }
