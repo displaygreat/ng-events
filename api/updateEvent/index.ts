@@ -3,7 +3,7 @@ import { Events } from "../model";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 
-    if(!req.params.id || !req.body.name || !req.body.author || req.body.date || req.body.time || req.body.slots)
+    if(!req.body.id || !req.body.name || !req.body.author || req.body.date || req.body.time || req.body.slots)
     {
         context.log('Bad request, missing data');
 

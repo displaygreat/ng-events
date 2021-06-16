@@ -1,15 +1,3 @@
-<!-- <div class="event-card">
-  <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{ event.time }}</p>
-  <span class=" event-tag">attend for free</span>
-  <span class="counter-text">You added <span class="counter-number">{{ event.counter }}</span>
-    tickets</span>
-  <div class="counter-btns">
-    <button class="counter-btn btn-plus" (click)="addTicket()">+</button>
-    <button class="counter-btn btn-minus" (click)="removeTicket()">-</button>
-  </div>
-</div>
-<p>events works!</p> -->
-
 <div class="event-card" *ngFor="let event of events; let i = index">
   <p>{{ event.name }} - {{ event.author }} &nbsp;{{ event.date }}&nbsp;&nbsp;{{
     event.time }}</p>
@@ -17,11 +5,8 @@
   <span class="counter-text">You added <input type="text" id="numInput" class="num-tickets" [(ngModel)]="numInput[i]">
     tickets</span>
   <div class="counter-btns">
-    <!-- <button class="counter-btn btn-plus" (click)="addTicket(i)">+</button>
-    <button class="counter-btn btn-minus" (click)="removeTicket(i)">-</button> -->
     <button class="counter-btn btn-plus" (click)="onPlusClick(i)">+</button>
     <button class="counter-btn btn-minus" (click)="onMinusClick(i)">-</button>
-    <!-- <input type="text" id="buyNumInput" class="buyNum" [(ngModel)]="buyNumInput[i]"> -->
   </div>
   <button class="confirm-btn"
     (click)="updateEvent(event.name, event.author, event.date, event.time, event.slots, i)">Confirm</button>
