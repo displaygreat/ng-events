@@ -43,14 +43,6 @@ export class EventsComponent implements OnInit {
       console.log(this.numInput);
   }
 
-  createEvent() {
-    this.eventsService.createEvent().subscribe(
-      event => {
-        console.log(event);
-      }
-    );
-  }
-
   updateEvent(name: string, author: string, date: string, time: string, slots: number, i:   number) {
     const payload = {
         "id": name,
