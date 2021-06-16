@@ -1,7 +1,7 @@
-# Angular basic
+# ng-Tickets
 
-[Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build [Angular](https://angular.io/) apps in minutes. Use this repo with the [Angular quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular) to build and customize a new static site.
+Technologies: Angular, TypeScript, Azure Static Web Apps, Azure Functions, Azure CosmosDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and [Azure Static Web Apps angular-basic template ](https://github.com/staticwebdev/angular-basic/generate)
 
 [![ng-Tickets - Azure SWA - Angular](https://github.com/displaygreat/displaygreat/blob/main/ng-Tickets-Azure-SWA-Angular.gif)](https://youtu.be/2xf3aNm1DAs)
