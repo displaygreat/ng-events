@@ -9,9 +9,6 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         body: context.bindings.events as Array<Events>
     };
     
-    // context.res.json({
-    //     text: "Hello from Get All Events",
-    // });
 };
 
 export default httpTrigger;
