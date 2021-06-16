@@ -31,15 +31,11 @@ export class EventsComponent implements OnInit {
 
   onPlusClick(i: number) {
     this.numInput[i]++;
-    console.log(this.numInput[i]);
-    console.log(this.numInput);
   }
 
   onMinusClick(i: number) {
     if (this.numInput[i] > 0)
       this.numInput[i]--;
-      console.log(this.numInput[i]);
-      console.log(this.numInput);
   }
 
   updateEvent(name: string, author: string, date: string, time: string, slots: number, i:   number) {
