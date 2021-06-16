@@ -19,12 +19,12 @@ export class AppComponent {
   
   toggleEvents () {
     this.toggle = !this.toggle;
-    this.getAllEvents();
+    // this.getAllEvents();
   }
 
-  async getAllEvents(){
-    const response = await fetch("/api/getAllEvents");
-    const payload = await response.json();     
-    console.dir(payload);
-  }
+  // async getAllEvents(){
+  //   const response = await fetch("/api/getAllEvents");
+  //   const payload = await response.json();     
+  //   console.dir(payload);
+  // }
 }

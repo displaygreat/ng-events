@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
 import { FormsModule } from '@angular/forms';
+import { AppService } from './app.service';
 import { EventsService } from './events.service';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { EventsService } from './events.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [EventsService],
+  providers: [AppService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
