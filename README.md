@@ -4,4 +4,4 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
-[![ng-Tickets-demo-video](https://github.com/displaygreat/displaygreat/blob/main/ng-Tickets-Azure-SWA-Angular.gif)](https://youtu.be/2xf3aNm1DAs)
+[[ng-Tickets-demo-video](https://github.com/displaygreat/displaygreat/blob/main/ng-Tickets-Azure-SWA-Angular.gif)](https://youtu.be/2xf3aNm1DAs)
