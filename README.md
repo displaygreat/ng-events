@@ -1,5 +1,7 @@
 # ng-Tickets
 
+Web Application for event ticketing.
+
 Technologies: Angular, TypeScript, Azure Static Web Apps, Azure Functions, Azure CosmosDB.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and [Azure Static Web Apps angular-basic template ](https://github.com/staticwebdev/angular-basic/generate).
