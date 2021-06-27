@@ -19,12 +19,6 @@ Demo: https://agreeable-wave-0421d5210.azurestaticapps.net/
 
 ## Usage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and [Azure Static Web Apps angular-basic template ](https://github.com/staticwebdev/angular-basic/generate).
-
-1. In the project directory, you can run:
-
-   - `npm install`
-
-   - `ng serve`
-
-2. Open [http://localhost:5500](http://localhost:5500) to view it in the browser.
+This project was generated with:
+1. [Angular CLI](https://github.com/angular/angular-cli)
+2. [Azure Static Web Apps angular-basic template ](https://github.com/staticwebdev/angular-basic/generate).
