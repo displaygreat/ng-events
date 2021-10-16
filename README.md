@@ -13,7 +13,7 @@ Technologies
 
 ## Demo
 
-Demo: https://agreeable-wave-0421d5210.azurestaticapps.net/
+Demo: https://victorious-ocean-071c99c03.azurestaticapps.net/
 
 [![ng-Tickets - Azure SWA - Angular](https://github.com/displaygreat/displaygreat/blob/main/ng-Tickets-Azure-SWA-Angular.gif)](https://youtu.be/2xf3aNm1DAs)
 
