@@ -18,7 +18,7 @@
       "name": "events",
       "type": "cosmosDB",
       "direction": "in",
-      "databaseName": "ng-tickets",
+      "databaseName": "ng-events",
       "collectionName": "name",
       "sqlQuery": "SELECT * from c",
       "connectionStringSetting": "CosmosDBConnection"   

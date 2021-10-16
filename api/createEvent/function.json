@@ -17,7 +17,7 @@
     {
       "name": "existingProject",
       "type": "cosmosDB",
-      "databaseName": "ng-tickets",
+      "databaseName": "ng-events",
       "collectionName": "name",
       "id" : "{name}",
       "partitionKey": "name",
@@ -27,7 +27,7 @@
   {
     "name": "projectSaver",
     "type": "cosmosDB",
-    "databaseName": "ng-tickets",
+    "databaseName": "ng-events",
     "collectionName": "name",
     "connectionStringSetting": "CosmosDBConnection",
     "direction": "out"
