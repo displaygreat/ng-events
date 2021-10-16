@@ -18,7 +18,7 @@
       "name": "existingProject",
       "type": "cosmosDB",
       "databaseName": "ng-events",
-      "collectionName": "name",
+      "collectionName": "Items",
       "id" : "{name}",
       "partitionKey": "name",
       "connectionStringSetting": "CosmosDBConnection",
@@ -28,7 +28,7 @@
     "name": "projectSaver",
     "type": "cosmosDB",
     "databaseName": "ng-events",
-    "collectionName": "name",
+    "collectionName": "Items",
     "connectionStringSetting": "CosmosDBConnection",
     "direction": "out"
   }
