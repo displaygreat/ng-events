@@ -3,6 +3,7 @@
   border-radius: 4px;
   padding: 40px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
   font-size: 1.2em;
@@ -13,9 +14,6 @@
 .event-tag {
   color: #e30530;
   margin-left: 40px;
-}
-.counter-btns {
-  margin-left: 20px;
 }
 .counter-btn {
   width: 30px;
@@ -32,9 +30,6 @@
 .btn-minus {
   color: #e30530;
   border: 2px solid #e30530;
-}
-.counter-text {
-  margin-left: 20px;
 }
 .counter-number {
   color: #1976d2;
@@ -55,7 +50,6 @@
   width: 10px;
 }
 .confirm-btn {
-  margin-left: auto;
   color: #fff;
   border: 2px solid #1976d2;
   border-radius: 4px;
@@ -71,7 +65,6 @@
       text-align: center;
     }
     span {
-      margin-left: 0;
       margin-bottom: 1rem;
     }
   }
@@ -79,7 +72,6 @@
     margin: 1rem 0 0 0;
   }
   .confirm-btn {
-    margin-left: 0;
     margin-top: 30px;
   }
 }
